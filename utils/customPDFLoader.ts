@@ -17,7 +17,7 @@ export abstract class BufferLoader extends BaseDocumentLoader {
     let metadata: Record<string, string>;
     if (typeof this.filePathOrBlob === 'string') {
       buffer = await readFile(this.filePathOrBlob);
-      metadata = { source: this.filePathOrBlob };
+      metadata = { source: process.env.CUSTOM_DOMAIN + '/docs/' + 'fs06.pdf' };
     } else {
       buffer = await this.filePathOrBlob
         .arrayBuffer()
